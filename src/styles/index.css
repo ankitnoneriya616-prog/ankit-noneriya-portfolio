@@ -28,3 +28,87 @@ body {
     scroll-behavior: auto;
   }
 }
+
+
+/* Cinematic studio direction — original portfolio wording remains unchanged */
+.hero-section{isolation:isolate;min-height:100svh!important;padding-top:120px;padding-bottom:70px;background:radial-gradient(ellipse at 78% 45%,rgba(201,168,118,.10),transparent 42%),#08090b}
+.hero-copy{max-width:1240px!important;pointer-events:none}
+.hero-copy a,.hero-copy button{pointer-events:auto}
+.hero-copy h1{position:relative;z-index:2;text-shadow:0 8px 45px #0008}
+.hero-copy>p,.hero-copy h2,.hero-copy>div:last-child{max-width:560px}
+.hero-studio{position:absolute;z-index:0;right:-3%;top:10%;width:min(67vw,900px);height:82%;min-height:500px;pointer-events:none;perspective:1100px;transform-style:preserve-3d;opacity:.96}
+.hero-room-glow{position:absolute;inset:4% 4% 4% 10%;background:radial-gradient(ellipse at 58% 48%,rgba(201,168,118,.17),transparent 48%),radial-gradient(ellipse at 80% 80%,rgba(93,67,151,.14),transparent 36%);filter:blur(24px);animation:roomGlow 7s ease-in-out infinite alternate}
+.hero-wall-grid{position:absolute;inset:0 2% 23% 10%;opacity:.19;background:linear-gradient(90deg,transparent 49.8%,#c9a876 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,#c9a876 50%,transparent 50.2%);background-size:92px 92px;mask-image:linear-gradient(90deg,transparent,#000 30%,#000 80%,transparent)}
+.hero-shelf{position:absolute;top:9%;right:11%;display:flex;gap:20px;align-items:center;opacity:.7}
+.hero-shelf span{display:block;width:46px;height:4px;background:#d7b77f;box-shadow:0 0 16px #c9a87655}
+.hero-monitor{position:absolute;border:2px solid #4a4b4c;background:#080b10;box-shadow:0 22px 50px #000b,0 0 0 5px #17191c,0 0 32px #c9a87612;overflow:hidden;transform:rotateY(-7deg);animation:monitorFloat 6s ease-in-out infinite}
+.hero-monitor-main{width:59%;height:48%;left:14%;top:21%;border-radius:8px;z-index:3}
+.monitor-top,.code-top{height:23px;background:#1b1d20;border-bottom:1px solid #343638;display:flex;align-items:center;gap:5px;padding:0 9px}
+.monitor-top i,.code-top i{width:5px;height:5px;border-radius:50%;background:#d6a85f;display:block}
+.monitor-top span{margin-left:auto;color:#a8a6a2;font:7px monospace;letter-spacing:.15em}
+.monitor-layout{height:72%;display:grid;grid-template-columns:9% 1fr 23%;gap:8px;padding:9px}
+.monitor-sidebar{display:flex;flex-direction:column;gap:10px;padding:4px}
+.monitor-sidebar i{height:5px;background:#5a5d62;border-radius:3px}
+.monitor-sidebar i:first-child{background:#c9a876}
+.monitor-preview{position:relative;overflow:hidden;background:linear-gradient(135deg,#27221b,#0c1015 70%);display:flex;align-items:flex-end;padding:8%;color:#f5f3ef;font:clamp(14px,2.4vw,32px)/.88 Georgia,serif;letter-spacing:-.04em}
+.preview-orb{position:absolute;width:56%;aspect-ratio:1;right:4%;top:5%;border-radius:50%;background:radial-gradient(circle at 35% 28%,#f6d7a0,#a66c35 38%,#36271e 72%);box-shadow:0 0 28px #d89d5340;animation:orbPulse 5s ease-in-out infinite alternate}
+.monitor-preview b{position:relative;z-index:2;text-shadow:0 2px 12px #000}
+.monitor-preview span{position:absolute;left:8%;right:8%;bottom:8%;height:2px;background:#c9a876;transform-origin:left;animation:scanLine 4s ease-in-out infinite alternate}
+.monitor-panels{display:flex;flex-direction:column;gap:6px}
+.monitor-panels i{height:17%;background:linear-gradient(100deg,#293b50,#8b5e38);opacity:.8;border-radius:2px}
+.monitor-panels i:nth-child(2n){background:linear-gradient(100deg,#3d344d,#c9a876)}
+.monitor-timeline{height:12%;margin:0 9px;border-top:1px solid #383b40;display:flex;gap:4px;padding-top:6px}
+.monitor-timeline i{height:5px;flex:1;border-radius:2px;background:#bd7f40;animation:timelinePulse 2.2s ease-in-out infinite alternate}
+.monitor-timeline i:nth-child(2n){background:#7766a7;animation-delay:.4s}
+.hero-monitor-side{width:32%;height:31%;right:5%;top:29%;z-index:2;animation-delay:-2s;transform:rotateY(-12deg) rotateX(2deg)}
+.code-content{padding:13px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.code-content i{display:block;height:4px;width:70%;background:#6286a5;border-radius:3px;animation:codeFlicker 3s ease-in-out infinite alternate}
+.code-content i:nth-of-type(2n){width:46%;background:#bd9561}
+.code-content i:nth-of-type(3n){width:84%;background:#7c719f}
+.code-content b{display:block;width:35%;height:5px;background:#c9a876;margin-top:6px}
+.hero-speaker{position:absolute;right:12%;top:13%;width:8%;height:14%;border:1px solid #4c4944;background:linear-gradient(110deg,#1a1a1b,#08090a);border-radius:5px;box-shadow:0 15px 25px #0008}
+.hero-speaker i,.hero-speaker b{position:absolute;left:50%;top:24%;transform:translateX(-50%);width:35%;aspect-ratio:1;border-radius:50%;border:4px solid #3b3b3c;background:radial-gradient(circle,#090a0c 30%,#47413a 33%,#111 65%);box-shadow:0 0 10px #c9a87615}
+.hero-speaker b{top:58%;width:24%;border-width:3px}
+.hero-pc{position:absolute;right:7%;bottom:14%;width:11%;height:31%;border:2px solid #45403a;border-radius:7px;background:linear-gradient(120deg,#191a1d,#08090b);box-shadow:0 0 28px #a56f4c22;z-index:4}
+.hero-pc i{position:absolute;inset:7px;border:1px solid #292a2d;border-radius:4px;background:repeating-linear-gradient(180deg,transparent 0 10px,#c9a87610 11px 12px)}
+.hero-pc span{position:absolute;top:14%;bottom:14%;left:28%;width:2px;background:#d7a968;box-shadow:0 0 12px #c9a876;animation:pcGlow 2s ease-in-out infinite alternate}
+.hero-pc b{position:absolute;bottom:10%;left:43%;width:5px;height:5px;border-radius:50%;background:#8b70bf;box-shadow:0 0 12px #8b70bf}
+.hero-desk{position:absolute;left:5%;right:1%;bottom:10%;height:8%;background:linear-gradient(180deg,#5b4934,#191513 20%,#08090b 75%);transform:skewY(-1deg);box-shadow:0 20px 35px #000b;border-top:2px solid #b78d50;z-index:3}
+.hero-keyboard{position:absolute;left:34%;bottom:16%;width:18%;height:2.5%;background:repeating-linear-gradient(90deg,#26282b 0 7px,#b18b58 8px 9px);border:1px solid #4a4033;transform:perspective(120px) rotateX(24deg);z-index:4;box-shadow:0 0 16px #c9a87622}
+.hero-studio-label{position:absolute;right:4%;bottom:5%;color:#b5a080;font:9px monospace;letter-spacing:.26em}
+@keyframes roomGlow{from{opacity:.55;transform:scale(.97)}to{opacity:1;transform:scale(1.04)}}
+@keyframes monitorFloat{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@keyframes orbPulse{from{transform:scale(.93);filter:brightness(.85)}to{transform:scale(1.04);filter:brightness(1.2)}}
+@keyframes scanLine{from{transform:scaleX(.3);opacity:.45}to{transform:scaleX(1);opacity:1}}
+@keyframes timelinePulse{from{opacity:.45}to{opacity:1}}
+@keyframes codeFlicker{from{opacity:.45}to{opacity:1}}
+@keyframes pcGlow{from{opacity:.4}to{opacity:1}}
+@media(max-width:767px){
+ .hero-section{min-height:100svh!important;padding:105px 22px 300px!important;align-items:flex-start!important}
+ .hero-copy{max-width:100%!important;margin:0!important}
+ .hero-copy h1 span{font-size:clamp(48px,15vw,78px)!important;line-height:.91!important}
+ .hero-copy>p:first-child{font-size:10px!important;letter-spacing:.22em!important;margin-bottom:16px!important}
+ .hero-copy h2{font-size:22px!important;line-height:1.2!important;margin-top:22px!important;max-width:100%!important}
+ .hero-copy p{font-size:13px!important;line-height:1.7!important;max-width:100%!important}
+ .hero-copy .mt-10{margin-top:22px!important;gap:10px!important}
+ .hero-copy .mt-10 a{padding:13px 15px!important;font-size:10px!important;letter-spacing:.08em!important}
+ .hero-studio{position:absolute;top:auto;right:-7%;bottom:0;width:115%;height:330px;min-height:0;opacity:.8;transform:scale(.98);transform-origin:bottom right}
+ .hero-wall-grid{inset:0 0 20% 5%;background-size:55px 55px}
+ .hero-monitor-main{left:7%;top:18%;width:64%;height:49%}
+ .hero-monitor-side{right:2%;top:29%;width:33%;height:29%}
+ .hero-speaker{top:5%;right:13%;height:14%;width:9%}
+ .hero-pc{right:5%;bottom:14%;height:32%;width:12%}
+ .hero-desk{bottom:9%;height:9%}
+ .hero-keyboard{left:29%;bottom:15%;width:24%}
+ .hero-shelf{top:3%;right:25%;gap:10px}
+ .hero-shelf span{width:24px}
+ .hero-studio-label{font-size:7px;right:8%;bottom:3%;letter-spacing:.15em}
+}
+@media(max-width:390px){
+ .hero-section{padding-left:19px!important;padding-right:19px!important;padding-bottom:280px!important}
+ .hero-copy h1 span{font-size:clamp(46px,14.7vw,60px)!important}
+ .hero-copy h2{font-size:20px!important}
+ .hero-copy .mt-10 a{padding:12px 11px!important}
+ .hero-studio{height:295px;width:120%;right:-10%}
+}
+@media(prefers-reduced-motion:reduce){.hero-studio *,.hero-studio{animation:none!important}}
