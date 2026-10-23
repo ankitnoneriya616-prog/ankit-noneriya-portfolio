@@ -2,12 +2,12 @@ import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
 const views = [
-  { p: [4.2, 1.5, 6.3], t: [0, 0, 0] },
-  { p: [0.2, 0.45, 7.8], t: [0, 0, 0] },
-  { p: [3.6, 4.5, 5.2], t: [0, 0, 0] },
-  { p: [-3.8, 0.8, 3.2], t: [0, 0, 0] },
-  { p: [1.6, 0.2, -6.2], t: [0, 0, 0] },
-  { p: [-4.3, 2.1, -5.5], t: [0, 0, 0] },
+  { p: [4.8, 1.9, -12.5], t: [0, 0, 0] },
+  { p: [3.8, 1.5, -12.2], t: [0, 0, 0] },
+  { p: [2.5, 1.2, -12.8], t: [0, 0, 0] },
+  { p: [3.6, 1.7, -12.4], t: [0, 0, 0] },
+  { p: [4.6, 2.0, -12.7], t: [0, 0, 0] },
+  { p: [3.7, 1.4, -12.3], t: [0, 0, 0] },
 ]
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v))
 const smooth = (t) => t * t * (3 - 2 * t)
@@ -129,9 +129,10 @@ export default function CinematicFlightScene() {
         a.p[2] + (b.p[2] - a.p[2]) * blend
       )
       camera.lookAt(0, 0, 0)
-      jet.position.y = Math.sin(time * 5.5) * .035
-      jet.rotation.z = Math.sin(time * 2.1) * .008
-      jet.rotation.x = Math.sin(time * 1.6) * .006
+      jet.position.x = Math.sin(time * 1.25) * .32
+      jet.position.y = Math.sin(time * 5.5) * .10
+      jet.rotation.z = Math.sin(time * 1.25) * .025
+      jet.rotation.x = Math.sin(time * 1.6) * .018
       const pos = cloudGeo.attributes.position.array
       for (let j = 0; j < count; j++) {
         const idx = j * 3
