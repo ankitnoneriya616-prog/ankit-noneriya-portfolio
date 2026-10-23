@@ -119,3 +119,48 @@ main > section:not(.hero-section) > * {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
   main > section:not(.hero-section) > * { animation: none !important; }
 }
+
+
+/* Live Three.js flight scene */
+.hero-section { min-height: 100svh; }
+.flight-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 55% 46%, rgba(90,135,171,.14), transparent 44%),
+    linear-gradient(115deg, #080e16 0%, #101b29 54%, #070c13 100%);
+  touch-action: pan-y;
+}
+.flight-scene canvas { display: block; width: 100%; height: 100%; }
+.flight-scene-vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(6,10,16,.92) 0%, rgba(6,10,16,.70) 27%, rgba(6,10,16,.10) 62%, rgba(6,10,16,.12) 100%),
+    linear-gradient(0deg, rgba(6,10,16,.82), transparent 32%, rgba(6,10,16,.15) 74%, rgba(6,10,16,.55));
+}
+.flight-scene-caption {
+  position: absolute; right: clamp(20px, 5vw, 76px); bottom: 34px;
+  display: flex; gap: 22px; align-items: center;
+  color: rgba(223,237,249,.68); font: 10px 'Red Hat Mono', monospace;
+  letter-spacing: .16em; text-transform: uppercase;
+}
+.flight-progress {
+  position: absolute; right: clamp(20px, 5vw, 76px); bottom: 20px;
+  width: clamp(130px, 24vw, 300px); height: 1px; background: rgba(238,247,255,.22);
+}
+.flight-progress i { display: block; width: 16.666%; height: 1px; background: #b7d9ef; transition: width 2.6s cubic-bezier(.22,.8,.2,1); }
+.hero-copy { z-index: 2; }
+@media (max-width: 767px) {
+  .flight-scene { inset: 0; }
+  .flight-scene-vignette {
+    background: linear-gradient(180deg, rgba(6,10,16,.74) 0%, rgba(6,10,16,.48) 35%, rgba(6,10,16,.12) 61%, rgba(6,10,16,.88) 100%);
+  }
+  .flight-scene-caption { right: 20px; bottom: 28px; left: 20px; justify-content: space-between; gap: 8px; font-size: 8px; }
+  .flight-progress { left: 20px; right: 20px; bottom: 16px; width: auto; }
+  .hero-section { padding-bottom: 90px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flight-progress i { transition: none; }
+}
