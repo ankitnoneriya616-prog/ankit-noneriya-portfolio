@@ -70,7 +70,7 @@ export default function Hero() {
           transition={{ delay: 0.1, duration: 0.6 }}
           className="mb-6 text-xs tracking-[0.3em] text-mist"
         >
-          AI & DIGITAL CREATIVE SPECIALIST SPECIALIST
+          AI & DIGITAL CREATIVE SPECIALIST
         </motion.p>
 
         <h1 className="font-display font-medium leading-[0.95] text-bone">
@@ -84,7 +84,7 @@ export default function Hero() {
           transition={{ delay: 1.35, duration: 0.7 }}
           className="mt-6 text-sm tracking-[0.2em] text-brass"
         >
-          AI & DIGITAL CREATIVE
+          AI & DIGITAL CREATIVE SPECIALIST
         </motion.p>
 
         <motion.h2
