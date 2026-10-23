@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import MagneticButton from '../components/MagneticButton.jsx'
-import CinematicFlightScene from '../components/CinematicFlightScene.jsx'
 
 const letter = {
   hidden: { y: '110%', opacity: 0 },
@@ -64,7 +63,6 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[30rem] w-[30rem] rounded-full bg-bone/5 blur-[120px]"
       />
 
-      <CinematicFlightScene />
       <div className="hero-copy relative z-10 mx-auto w-full max-w-7xl">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
