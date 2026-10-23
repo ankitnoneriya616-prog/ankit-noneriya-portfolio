@@ -1,6 +1,7 @@
 import { MotionConfig } from 'framer-motion'
 import Cursor from './components/Cursor.jsx'
 import CinematicFlightScene from './components/CinematicFlightScene.jsx'
+import CinematicFlightScene from './components/CinematicFlightScene.jsx'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Hero from './sections/Hero.jsx'
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className="relative min-h-screen bg-ink text-bone">
+        <CinematicFlightScene />
         <CinematicFlightScene />
         <Cursor />
         <Navbar />
