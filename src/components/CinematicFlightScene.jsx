@@ -168,7 +168,11 @@ export default function CinematicFlightScene() {
     const wheel = (event) => {
       const rect = host.getBoundingClientRect()
       const inside = rect.top < window.innerHeight * 0.55 && rect.bottom > window.innerHeight * 0.35
-      if (!inside || event.ctrlKey || moving) return
+      if (!inside || event.ctrlKey) return
+      if (moving) {
+        if (event.deltaY > 0 && stageRef.current <= 5) event.preventDefault()
+        return
+      }
       if (event.deltaY > 0 && stageRef.current < 5) {
         event.preventDefault()
         setStage(stageRef.current + 1)
