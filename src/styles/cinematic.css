@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Red+Hat+Display:wght@400;500;600&family=Red+Hat+Mono:wght@400;500&display=swap');
+
+/* ORVELLE-inspired cinematic skin for Ankit's existing portfolio.
+   All existing portfolio copy and section components remain in place. */
+:root {
+  --cinema-ink: oklch(0.12 0.01 250);
+  --cinema-night: oklch(0.16 0.014 250);
+  --cinema-mist: oklch(0.72 0.018 245);
+  --cinema-frost: oklch(0.95 0.008 240);
+  --cinema-ice: oklch(0.85 0.07 230);
+  --cinema-line: rgba(240, 246, 255, .12);
+}
+html { scroll-behavior: smooth; background: var(--cinema-ink); }
+body {
+  background: var(--cinema-ink);
+  color: var(--cinema-frost);
+  font-family: 'Red Hat Display', sans-serif;
+}
+h1,h2,h3,[class*="font-display"] { font-family: 'Forum', Georgia, serif; }
+small, label, nav, .eyebrow, [class*="tracking-"] { letter-spacing: .14em; }
+::selection { background: var(--cinema-ice); color: var(--cinema-ink); }
+
+/* Atmospheric light and moving cloud layers, kept behind the content. */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  inset: -20%;
+  pointer-events: none;
+  opacity: .23;
+  background:
+    radial-gradient(ellipse at 18% 40%, rgba(111,151,185,.17), transparent 34%),
+    radial-gradient(ellipse at 80% 64%, rgba(191,216,239,.10), transparent 29%),
+    radial-gradient(ellipse at 55% 12%, rgba(74,102,139,.12), transparent 35%);
+  filter: blur(34px);
+  animation: cloudDrift 32s ease-in-out infinite alternate;
+}
+body::after { opacity: .12; animation-duration: 48s; animation-direction: alternate-reverse; transform: scale(1.12); }
+#root { position: relative; isolation: isolate; }
+#root > div { background: transparent !important; }
+
+/* Every existing section gets the same fine rules, deep gradients and calm motion. */
+main > section:not(.hero-section) {
+  position: relative;
+  isolation: isolate;
+  border-top: 1px solid var(--cinema-line);
+  background:
+    radial-gradient(ellipse at 82% 20%, rgba(130,170,205,.055), transparent 35%),
+    linear-gradient(180deg, rgba(13,19,29,.93), rgba(8,12,19,.97));
+}
+main > section:not(.hero-section)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: .26;
+  background: repeating-linear-gradient(115deg, transparent 0 90px, rgba(220,238,255,.018) 91px, transparent 92px 180px);
+  mask-image: linear-gradient(180deg, transparent, black 18%, black 78%, transparent);
+}
+main > section:not(.hero-section) h2,
+main > section:not(.hero-section) h3 { text-wrap: balance; }
+main > section:not(.hero-section) a,
+main > section:not(.hero-section) button {
+  transition: transform .55s cubic-bezier(.22,.8,.2,1), border-color .45s ease, background .45s ease, box-shadow .45s ease;
+}
+main > section:not(.hero-section) a:hover,
+main > section:not(.hero-section) button:hover {
+  transform: translateY(-3px);
+}
+main > section:not(.hero-section) [class*="border"] { border-color: var(--cinema-line); }
+
+/* A slow ice-blue horizon replaces the warmer generic studio glow. */
+.hero-section {
+  background:
+    radial-gradient(ellipse at 76% 43%, rgba(108,157,194,.13), transparent 39%),
+    radial-gradient(ellipse at 15% 85%, rgba(67,96,130,.12), transparent 38%),
+    var(--cinema-ink) !important;
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: auto -12% -20% 18%;
+  height: 48%;
+  pointer-events: none;
+  background: radial-gradient(ellipse, rgba(158,192,220,.12), transparent 66%);
+  filter: blur(28px);
+  animation: horizonFloat 12s ease-in-out infinite alternate;
+}
+.hero-studio { filter: saturate(.72) hue-rotate(8deg); }
+.hero-room-glow { background: radial-gradient(ellipse at 58% 48%, rgba(151,190,221,.15), transparent 48%), radial-gradient(ellipse at 80% 80%, rgba(88,123,166,.12), transparent 36%); }
+.hero-studio-label { color: #b8cddd; }
+.hero-monitor { box-shadow: 0 22px 50px #000b, 0 0 0 5px #171d25, 0 0 36px rgba(125,178,218,.12); }
+.preview-orb { background: radial-gradient(circle at 35% 28%, #e9f4fb, #789bb8 38%, #1b2a3b 72%); box-shadow: 0 0 28px rgba(129,184,222,.25); }
+.monitor-timeline i { background: #8bb9d8; }
+.monitor-timeline i:nth-child(2n) { background: #6d829d; }
+.hero-shelf span { background: #b4d6ed; box-shadow: 0 0 16px rgba(153,204,236,.32); }
+.hero-pc span { background: #a8d8f4; box-shadow: 0 0 12px #8ec9ef; }
+
+/* Fine grain and a cinematic scroll cadence without hijacking the browser's scroll. */
+main > section:not(.hero-section) > * {
+  animation: sectionRise .9s cubic-bezier(.22,.8,.2,1) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 24%;
+}
+@keyframes cloudDrift { from { transform: translate3d(-1.5%, -1%, 0) scale(1); } to { transform: translate3d(2%, 1.5%, 0) scale(1.06); } }
+@keyframes horizonFloat { from { transform: translate3d(-2%, 0, 0) scale(.96); opacity: .55; } to { transform: translate3d(2%, -8px, 0) scale(1.06); opacity: 1; } }
+@keyframes sectionRise { from { opacity: .55; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
+
+@media (max-width: 767px) {
+  body::before, body::after { filter: blur(22px); opacity: .16; }
+  main > section:not(.hero-section) { overflow: clip; }
+  .hero-section { background-position: center; }
+  .hero-studio { filter: saturate(.7) hue-rotate(8deg); }
+  main > section:not(.hero-section) > * { animation-range: entry 0% entry 14%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  main > section:not(.hero-section) > * { animation: none !important; }
+}
