@@ -70,12 +70,12 @@ export default function Hero() {
           transition={{ delay: 0.1, duration: 0.6 }}
           className="mb-6 text-xs tracking-[0.3em] text-mist"
         >
-          AI • WEB • CREATIVE
+          AI & DIGITAL CREATIVE SPECIALIST SPECIALIST
         </motion.p>
 
         <h1 className="font-display font-medium leading-[0.95] text-bone">
-          <RevealLine text="ANKIT" className="block text-[15vw] md:text-[7rem]" delay={0.3} />
-          <RevealLine text="NONERIYA" className="block text-[15vw] md:text-[7rem]" delay={0.75} />
+          <RevealLine text="ANKIT" className="block text-[17vw] md:text-[6.7rem]" delay={0.3} />
+          <RevealLine text="NONERIYA" className="block text-[17vw] md:text-[6.7rem]" delay={0.75} />
         </h1>
 
         <motion.p
@@ -93,7 +93,7 @@ export default function Hero() {
           transition={{ delay: 1.5, duration: 0.8 }}
           className="mt-8 max-w-2xl font-display text-2xl text-bone md:text-3xl"
         >
-          I turn ideas into digital experiences.
+          Designing. Building. Creating.
         </motion.h2>
 
         <motion.p
@@ -102,8 +102,7 @@ export default function Hero() {
           transition={{ delay: 1.65, duration: 0.8 }}
           className="mt-5 max-w-xl text-mist"
         >
-          From premium websites and cinematic content to AI-powered creative solutions, I transform ideas
-          into experiences that stand out.
+          For a smarter digital tomorrow.
         </motion.p>
 
         <motion.div
@@ -113,10 +112,10 @@ export default function Hero() {
           className="mt-10 flex flex-wrap gap-4"
         >
           <MagneticButton href="#contact" variant="solid">
-            Work With Me
+            Explore My Work
           </MagneticButton>
           <MagneticButton href="#services" variant="outline">
-            View My Services
+            Let’s Talk
           </MagneticButton>
         </motion.div>
       </div>
