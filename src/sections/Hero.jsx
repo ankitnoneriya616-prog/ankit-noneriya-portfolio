@@ -52,7 +52,7 @@ export default function Hero() {
       ref={ref}
       id="top"
       onMouseMove={handleMouseMove}
-      className="relative flex min-h-screen items-center overflow-hidden px-6 pt-32 md:px-12"
+      className="hero-section relative flex min-h-screen items-center overflow-hidden px-6 pt-32 md:px-12"
     >
       <motion.div
         style={{ x: bgX, y: bgY }}
@@ -63,7 +63,27 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[30rem] w-[30rem] rounded-full bg-bone/5 blur-[120px]"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl">
+      <div className="hero-studio" aria-hidden="true">
+        <div className="hero-room-glow" />
+        <div className="hero-wall-grid" />
+        <div className="hero-shelf"><span></span><span></span><span></span></div>
+        <div className="hero-monitor hero-monitor-main">
+          <div className="monitor-top"><i></i><i></i><i></i><span>CREATIVE WORKSPACE</span></div>
+          <div className="monitor-layout">
+            <div className="monitor-sidebar"><i></i><i></i><i></i><i></i><i></i></div>
+            <div className="monitor-preview"><div className="preview-orb"></div><b>MAKE IT<br/>MATTER.</b><span></span></div>
+            <div className="monitor-panels"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div className="monitor-timeline"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div className="hero-monitor hero-monitor-side"><div className="code-top"><i></i><i></i><i></i></div><div className="code-content"><b></b><i></i><i></i><i></i><b></b><i></i><i></i><i></i><b></b><i></i><i></i></div></div>
+        <div className="hero-speaker"><i></i><b></b></div>
+        <div className="hero-pc"><i></i><span></span><b></b></div>
+        <div className="hero-desk"></div>
+        <div className="hero-keyboard"></div>
+        <div className="hero-studio-label">DIGITAL CRAFT · AI · MOTION</div>
+      </div>
+      <div className="hero-copy relative z-10 mx-auto w-full max-w-7xl">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
